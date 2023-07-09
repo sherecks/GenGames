@@ -28,10 +28,10 @@ function App() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center bg-slate-800">
+      <div className="flex flex-col justify-center bg-gray-800">
 
-        <div className="flex flex-row justify-between m-12 mb-12 mt-4 ">
-          <h1 className="text-4xl sm:text-8xl font-serif mb-8 text-lime-500">GNG</h1>
+        <div className="flex flex-row justify-between m-12 mb-12 mt-8 ">
+          <h1 className="text-4xl sm:text-8xl font-serif mb-8 text-stone-400">GNG</h1>
           <div>
             <button
               className={` text-xl sm:text-2xl m-2 mt-10  font-mono text-orange-100 ${
@@ -71,12 +71,16 @@ function App() {
                   {game.rating}
                 </p>
                 <p className="absolute bottom-1 left-4 sm:bottom-2 text-xl sm:text-2xl font-mono font-bold drop-shadow-2xl text-amber-100 hover:text-neutral-500">
-                  <FaCalendarAlt className="inline text-4xl pb-2 m-1 text-lime-400" /> 
+                  <FaCalendarAlt className="inline text-4xl pb-2 m-1 text-sky-500" /> 
                   {game.released}
                 </p>
               </div>
             </div>
           ))}
+        </div>
+        
+        <div className="flex flex-wrap justify-center">
+          <p className="text-xl sm:text-2xl m-2  font-mono text-orange-100">Design by <a href="https://www.joaopedropn.com.br/">João Pedro</a> </p>
         </div>
 
       </div>
