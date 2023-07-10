@@ -53,5 +53,19 @@ const getGamesByGenre = async (genre) => {
   }
 };
 
+const fetchGameDescription = async (gameId) => {
+  const URL = `https://api.rawg.io/api/games/${gameId}?key=${API_KEY}`;
+
+  try {
+    const response = await fetch(URL);
+    const data = await response.json();
+    return data.description_raw;
+  } catch (error) {
+    console.log('Ocorreu um erro ao buscar a descrição do jogo:', error);
+    return null;
+  }
+};
+
+export { fetchGameDescription };
 export { getGamesByGenre };
 export { getFormattedGames };
