@@ -28,13 +28,13 @@ function App() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center bg-gray-800">
+      <div className="flex flex-col justify-center bg-cor1">
 
-        <div className="flex flex-row justify-between m-12 mb-12 mt-8 ">
-          <h1 className="text-4xl sm:text-8xl font-serif mb-8 text-stone-400">GNG</h1>
+        <div className="flex flex-row justify-between m-12 mb-8 mt-6 ">
+          <h1 className="text-4xl sm:text-7xl font-mono text-cor2">GNG</h1>
           <div>
             <button
-              className={` text-xl sm:text-2xl m-2 mt-10  font-mono text-orange-100 ${
+              className={` text-xs sm:text-xl m-2 mt-10  font-mono text-cor5 ${
                 genre === null ? "text-opacity-100" : "text-opacity-50"
               }`}
               onClick={() => handleGenreClick(null)}
@@ -42,7 +42,7 @@ function App() {
               Not Released,
             </button>
             <button
-              className={` text-xl sm:text-2xl m-2  font-mono text-orange-100 ${
+              className={` text-xs sm:text-xl m-2 font-mono text-cor5 ${
                 genre === "massively-multiplayer" ? "text-opacity-100" : "text-opacity-50"
               }`}
               onClick={() => handleGenreClick("massively-multiplayer")}
@@ -50,7 +50,7 @@ function App() {
               Massive Multiplayer,
             </button>
             <button
-              className={` text-xl sm:text-2xl m-2 font-mono text-orange-100 ${
+              className={` text-xs sm:text-xl m-2 font-mono text-cor5 ${
                 genre == "action" ? "text-opacity-100" : "text-opacity-50"
               }`}
               onClick={() => handleGenreClick("action")}
@@ -60,10 +60,27 @@ function App() {
           </div>
         </div>
 
+        <div className="flex justify-center rounded-xl mb-4 mr-12 ml-12 bg-cor4">
+          <p className="text-xs sm:text-2xl m-4 font-mono text-cor5">
+            Welcome to our website! Discover the world of gaming with us.
+            We bring you exclusive content showcasing upcoming releases and
+            the best games of the year in the action and massively multiplayer
+            genres.
+          </p>
+          <div className="rounded-xl m-2 bg-cor3">
+            <p className="text-xs sm:text-xl m-4 font-mono text-cor5">
+              Dive into the excitement of exploring unreleased games
+              and uncovering hidden gems that will keep you entertained for hours.
+              Whether you're a hardcore gamer or just getting started, our platform is
+              your ultimate destination for gaming news, reviews, and recommendations.
+            </p>
+          </div>
+        </div>
+
         <div className="flex flex-wrap justify-center">
           {games.map((game, index) => (
             <div className="relative flex flex-col items-center mb-8 mx-4" key={index}>
-              <h2 className="text-xs sm:text-2xl font-mono text-amber-100">{game.name}</h2>
+              <h2 className="text-xs sm:text-2xl font-mono text-cor5">{game.name}</h2>
               <div>
                 <img className="w-80 h-62 sm:w-128 md:h-80 rounded-xl shadow-xl saturate-0 brightness-75 hover:saturate-100 duration-200" src={game.image} alt={game.name} />
                 <p className=" absolute top-6 right-4 sm:top-10 text-2xl font-mono font-bold drop-shadow-2xl text-amber-100 hover:text-neutral-500">
@@ -71,7 +88,7 @@ function App() {
                   {game.rating}
                 </p>
                 <p className="absolute bottom-1 left-4 sm:bottom-2 text-xl sm:text-2xl font-mono font-bold drop-shadow-2xl text-amber-100 hover:text-neutral-500">
-                  <FaCalendarAlt className="inline text-4xl pb-2 m-1 text-sky-500" /> 
+                  <FaCalendarAlt className="inline text-4xl pb-2 m-1 text-cor2" /> 
                   {game.released}
                 </p>
               </div>
