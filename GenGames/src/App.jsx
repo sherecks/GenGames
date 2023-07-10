@@ -1,7 +1,8 @@
-import { getFormattedGames, getGamesByGenre, fetchGameDescription } from "./Games"
+import { getFormattedGames, getGamesByGenre} from "./Games"
 import { useEffect, useState } from "react";
 import { FaStar, FaCalendarAlt } from 'react-icons/fa';
 
+const API_KEY = "497df8946f4e4c7d8a3bf04a81e50f13";
 
 function App() {
   const [games, setGames] = useState([]);
@@ -24,6 +25,19 @@ function App() {
   // Botão !!!
   const handleGenreClick = async (selectedGenre) => {
     setGenre(selectedGenre);
+  };
+
+  const fetchGameDescription = async (gameId) => {
+    const URL = `https://api.rawg.io/api/games/${gameId}?key=${API_KEY}`;
+  
+    try {
+      const response = await fetch(URL);
+      const data = await response.json();
+      return data.description_raw;
+    } catch (error) {
+      console.log('Ocorreu um erro ao buscar a descrição do jogo:', error);
+      return null;
+    }
   };
 
   // Teste !!!
