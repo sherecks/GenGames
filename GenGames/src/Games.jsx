@@ -1,8 +1,8 @@
-const API_KEY = "0fd56f555ae448b1af31de159a1184a1";
+const API_KEY = "497df8946f4e4c7d8a3bf04a81e50f13";
 
 
 const getFormattedGames = async () => {
-  const URL = `https://api.rawg.io/api/games?dates=2023-07-01,2026-12-25&key=${API_KEY}`;
+  const URL = `https://api.rawg.io/api/games?dates=2023-07-01,2023-12-25&key=${API_KEY}`;
 
   try {
       const response = await fetch(URL);
