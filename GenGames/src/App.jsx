@@ -67,7 +67,7 @@ function App() {
             genres.
           </p>
           <div className="rounded-xl m-2 bg-cor3">
-            <p className="text-xs sm:text-xl m-2 font-mono text-cor5">
+            <p className="text-xs sm:text-xl m-2 font-mono text-cor2">
               Dive into the excitement of exploring unreleased games
               and uncovering hidden gems that will keep you entertained for hours.
               Whether you're a hardcore gamer or just getting started, our platform is
@@ -78,8 +78,8 @@ function App() {
 
         <div className="flex flex-wrap justify-center">
           {games.map((game, index) => (
-            <div className="relative flex flex-col items-center mb-8 mx-4 bg-cor2 rounded-xl" key={index}>
-              <h2 className="text-xs sm:text-2xl font-mono text-cor5">{game.name}</h2>
+            <div className="relative flex flex-col items-center border-2 border-cor5 mb-8 mx-4 bg-cor5 rounded-xl" key={index}>
+              <h2 className="text-xs sm:text-2xl font-mono text-cor4">{game.name}</h2>
               <div>
                 <img className="w-80 h-62 sm:w-128 md:h-80 rounded-xl shadow-xl saturate-0 brightness-75 hover:saturate-100 duration-200" src={game.image} alt={game.name} />
                 <p className=" absolute top-6 right-4 sm:top-10 text-2xl font-mono font-bold drop-shadow-2xl text-amber-100 hover:text-neutral-500">
