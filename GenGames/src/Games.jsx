@@ -1,4 +1,4 @@
-const API_KEY = "497df8946f4e4c7d8a3bf04a81e50f13";
+const API_KEY = "a11f25e2e65a4d03ad84e1aeafcfce44";
 
 
 const getFormattedGames = async () => {

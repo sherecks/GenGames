@@ -2,7 +2,7 @@ import { getFormattedGames, getGamesByGenre} from "./Games"
 import { useEffect, useState } from "react";
 import { FaStar, FaCalendarAlt } from 'react-icons/fa';
 
-const API_KEY = "497df8946f4e4c7d8a3bf04a81e50f13";
+const API_KEY = "a11f25e2e65a4d03ad84e1aeafcfce44";
 
 function App() {
   const [games, setGames] = useState([]);
@@ -29,11 +29,12 @@ function App() {
 
   const fetchGameDescription = async (gameId) => {
     const URL = `https://api.rawg.io/api/games/${gameId}?key=${API_KEY}`;
-  
+    
     try {
       const response = await fetch(URL);
       const data = await response.json();
-      return data.description_raw;
+  
+      return data.description; // Retorna a descrição do jogo
     } catch (error) {
       console.log('Ocorreu um erro ao buscar a descrição do jogo:', error);
       return null;
@@ -43,17 +44,20 @@ function App() {
   // Teste !!!
   useEffect(() => {
     const fetchGameDescriptions = async () => {
-      const gamesWithDescriptions = await Promise.all(
-        games.map(async (game) => {
-          const description = await fetchGameDescription(game.id);
-          return {
-            ...game,
-            description,
-          };
-        })
-      );
-      setGames(gamesWithDescriptions);
+      if (Array.isArray(games) && games.length > 0) {
+        const gamesWithDescriptions = await Promise.all(
+          games.map(async (game) => {
+            const description = await fetchGameDescription(game.id);
+            return {
+              ...game,
+              description,
+            };
+          })
+        );
+        setGames(gamesWithDescriptions);
+      }
     };
+  
     fetchGameDescriptions();
   }, [games]);
 
@@ -110,7 +114,7 @@ function App() {
 
         <div className="flex flex-wrap justify-center">
           {games.map((game, index) => (
-            <div className="relative flex flex-col items-center mb-8 mx-4 bg-cor4 rounded-xl"  key={index}>
+            <div className="relative flex flex-col items-center mb-8 mx-4 bg-cor4 rounded-xl" key={index}>
               <h2 className="text-xs sm:text-2xl font-mono text-cor5">{game.name}</h2>
               <div>
                 <img className="w-80 h-62 sm:w-128 md:h-80 rounded-xl shadow-xl saturate-0 brightness-75 hover:saturate-100 duration-200" src={game.image} alt={game.name} />
