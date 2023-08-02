@@ -16,6 +16,7 @@ const getFormattedGames = async () => {
           rating: game.rating,
           image: game.background_image,
           released: game.released,
+          platforms: game.platforms,
         };
       });
   

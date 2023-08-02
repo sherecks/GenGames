@@ -1,6 +1,6 @@
 import { getFormattedGames, getGamesByGenre} from "./Games"
 import { useEffect, useState } from "react";
-import { FaStar, FaCalendarAlt } from 'react-icons/fa';
+import { FaStar, FaCalendarAlt, FaWindows, FaPlaystation, FaXbox } from 'react-icons/fa';
 
 function App() {
   const [games, setGames] = useState([]);
@@ -29,7 +29,7 @@ function App() {
     <div>
       <div className="flex flex-col justify-center bg-cor1">
 
-        <div className="flex flex-row justify-between rounded-xl mb-4 mr-12 ml-12  m-4 ">
+        <div className="flex flex-row justify-between rounded-xl mb-4 mr-8 ml-8 bg-cor4 m-4 ">
           <h1 className="text-4xl sm:text-7xl font-mono m-1 self-center text-cor2">GNG</h1>
           <div className="flex flex-wrap">
             <button
