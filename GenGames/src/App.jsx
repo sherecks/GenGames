@@ -2,6 +2,8 @@ import { getFormattedGames, getGamesByGenre} from "./Games"
 import { useEffect, useState } from "react";
 import { FaStar, FaCalendarAlt } from 'react-icons/fa';
 
+import '/dist/bg.css'
+
 function App() {
   const [games, setGames] = useState([]);
   const [genre, setGenre] = useState(null);
@@ -27,7 +29,7 @@ function App() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center bg-[url('./back.jpg')]" >
+      <div className="flex flex-col justify-center bg-custom-background" >
 
         <div className="flex flex-row justify-between rounded-xl mb-4 mr-12 ml-12">
           <img src="./logo.png"></img>
@@ -89,7 +91,6 @@ function App() {
         <div className="flex flex-wrap justify-center">
         <a href="https://www.joaopedropn.com.br/"><img src="./me.png"></img></a>
         </div>
-
       </div>
     </div>
   );
