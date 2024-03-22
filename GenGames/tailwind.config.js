@@ -14,11 +14,17 @@ export default {
         '132': '62rem',
       },
       colors: {
-        cor1: '#171a21',
-        cor2: '#66c0f4',
-        cor3: '#1b2838',
-        cor4: '#2a475e',
-        cor5: '#c7d5e0',
+        cor1: '#33aa83',
+        cor2: '#4ebf9c',
+        cor3: '#69d5b4',
+        cor4: '#000000',
+        cor5: '#41e9ae',
+      },
+      backgroundImage: {
+        'back': "url('./back.jpg')",
+      },
+      image: {
+        'back': "url('./logo.png')",
       },
     },
   },
