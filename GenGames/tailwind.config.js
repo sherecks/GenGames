@@ -23,9 +23,6 @@ export default {
       backgroundImage: {
         'back': "url('./back.jpg')",
       },
-      image: {
-        'back': "url('./logo.png')",
-      },
     },
   },
   plugins: [],

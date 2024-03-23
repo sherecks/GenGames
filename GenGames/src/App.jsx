@@ -2,8 +2,6 @@ import { getFormattedGames, getGamesByGenre} from "./Games"
 import { useEffect, useState } from "react";
 import { FaStar, FaCalendarAlt } from 'react-icons/fa';
 
-import '/dist/bg.css'
-
 function App() {
   const [games, setGames] = useState([]);
   const [genre, setGenre] = useState(null);
@@ -29,41 +27,41 @@ function App() {
 
   return (
     <div>
-      <div className="flex flex-col justify-center bg-custom-background" >
+      <div className="flex flex-wrap justify-center bg-[url('./back.jpg')]" >
 
-        <div className="flex flex-row justify-between rounded-xl mb-4 mr-12 ml-12">
-          <img src="./logo.png"></img>
+        <div className="flex flex-wrap justify-between rounded-xl mr-12 ml-12">
+          <img className="w-132" src="./logo.png"></img>
           <div className="flex flex-wrap">
             <button
-              className={` text-xs sm:text-xl m-2 font-mono text-cor5 ${
-                genre === null ? "text-opacity-100" : "text-opacity-50"
+              className={`m-2 ${
+                genre === null ? "opacity-100" : "opacity-100"
               }`}
               onClick={() => handleGenreClick(null)}
             >
-              <img src="./not.png"></img>
+              <img className="w-60" src="./not.png"></img>
             </button>
             <button
-              className={` text-xs sm:text-xl m-2 font-mono text-cor5 ${
-                genre === "massively-multiplayer" ? "text-opacity-100" : "text-opacity-50"
+              className={`m-2${
+                genre === "massively-multiplayer" ? "opacity-100" : "opacity-100"
               }`}
               onClick={() => handleGenreClick("massively-multiplayer")}
             >
-             <img src="./multi.png"></img>
+             <img className="w-60" src="./multi.png"></img>
             </button>
             <button
-              className={` text-xs sm:text-xl m-2 font-mono text-cor5 ${
-                genre == "action" ? "text-opacity-100" : "text-opacity-50"
+              className={`m-2  ${
+                genre == "action" ? "opacity-100" : "opacity-100"
               }`}
               onClick={() => handleGenreClick("action")}
             >
-              <img src="./action.png"></img>
+              <img className="w-60" src="./action.png"></img>
             </button>
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center rounded-xl mb-4 mr-12 ml-12">
-          <div className="rounded-xl m-2">
-            <p className="text-xs sm:text-6xl m-2 text-cor5">
+        <div className="flex flex-wrap justify-center mx-0">
+          <div>
+            <p className="m-2">
             <img src="./welcome.png"></img>
             </p>
           </div>
@@ -71,16 +69,16 @@ function App() {
 
         <div className="flex flex-wrap justify-center">
           {games.map((game, index) => (
-            <div className="relative flex flex-col items-center border-4 border-black mb-8 mx-4 bg-cor5 rounded-2xl" key={index}>
-              <h2 className="text-xs sm:text-xl font-mono text-cor4">{game.name}</h2>
+            <div className="relative flex flex-col items-center mb-8 mx-4" key={index}>
+              <h2 className="text-sm sm:text-xl m-4 font-mono text-cor2">{game.name}</h2>
               <div>
-                <img className="w-60 h-42 sm:w-128 md:h-80 rounded-xl shadow-xl border-y-4 border-black saturate-0 brightness-75" src={game.image} alt={game.name} />
-                <p className=" absolute top-6 right-4 sm:top-10 text-2xl font-mono font-bold drop-shadow-2xl text-amber-100">
-                  <FaStar className="inline text-4xl pb-1.5 m-1 text-cor2" />
+                <img className="w-60 h-42 sm:w-128 md:h-80 rounded-xl shadow-xl border-4 border-black saturate-0 brightness-75" src={game.image} alt={game.name} />
+                <p className=" absolute top-16 right-4 sm:top-16 text-sm sm:text-2xl font-mono font-bold drop-shadow-2xl text-amber-100">
+                  <FaStar className="inline text-sm sm:text-2xl pb-1.5 m-1 text-cor2" />
                   {game.rating}
                 </p>
-                <p className="absolute bottom-1 left-4 sm:bottom-2 text-xl sm:text-2xl font-mono font-bold drop-shadow-2xl text-amber-100">
-                  <FaCalendarAlt className="inline text-4xl pb-2 m-1 text-cor2" /> 
+                <p className="absolute bottom-1 left-4 sm:bottom-2 text-sm sm:text-2xl font-mono font-bold drop-shadow-2xl text-amber-100">
+                  <FaCalendarAlt className="inline text-sm sm:text-2xl pb-1 m-1 text-cor2" /> 
                   {game.released}
                 </p>
               </div>
@@ -89,7 +87,7 @@ function App() {
         </div>
         
         <div className="flex flex-wrap justify-center">
-        <a href="https://www.joaopedropn.com.br/"><img src="./me.png"></img></a>
+        <a target="_blank" href="https://www.joaopedropn.com.br/"><img src="./me.png"></img></a>
         </div>
       </div>
     </div>
