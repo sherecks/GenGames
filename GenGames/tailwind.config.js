@@ -10,7 +10,9 @@ export default {
         serif: ['"Georgia"'],
       },
       width: {
-        '128': '32rem',
+        '62': '28rem',
+        '64': '32rem',
+        '68': '40rem',
         '132': '62rem',
       },
       colors: {
